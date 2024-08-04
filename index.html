@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Friendship Day!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            animation: fadeIn 1s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: slideIn 1s;
+        }
+        h1 {
+            color: #ff6347;
+            text-align: center;
+            animation: bounceIn 1s;
+        }
+        .section {
+            margin: 20px 0;
+            animation: fadeIn 2s;
+        }
+        .section h2 {
+            color: #4682b4;
+        }
+        .section p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+        #friendshipMessage {
+            display: none;
+            font-size: 1.2em;
+            color: #32cd32;
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeIn 2s;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #4169e1;
+        }
+        #nameInputContainer {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 200px;
+            margin-right: 10px;
+        }
+        #content {
+            display: none;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes bounceIn {
+            from {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            input[type="text"] {
+                width: 150px;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 10px;
+            }
+            input[type="text"] {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Friendship Day!</h1>
+
+        <div id="nameInputContainer">
+            <input type="text" id="nameInput" placeholder="Enter your name">
+            <button onclick="showFriendshipMessage()">Submit</button>
+        </div>
+
+        <div id="friendshipMessage"></div>
+
+        <div id="content">
+            <div class="section">
+                <h2>Shayari</h2>
+                <p>Dosti ka rang gehra ho na ho,<br>
+                   Dosti ka rishta gehra hota hai,<br>
+                   Dosti mein faasle ho na ho,<br>
+                   Dosti mein pyaar gehra hota hai.</p>
+
+                <p>Har pal ne kaha ek pal se,<br>
+                   Pal bhar ke liye aap meri zindagi mein aayi,<br>
+                   Pal bhar ka tha aapka saath magar,<br>
+                   Pal bhar mein aap zindagi bhar ke liye chha gayi.</p>
+
+                <p>Dost kam milte hain duniya mein,<br>
+                   Par hamesha yaad rehte hain aap jaisi dosti mein.</p>
+            </div>
+<!-- 
+            <div class="section">
+                <h2>Love Messages</h2>
+                <p>Love is not about how many days, months, or years you've been together.<br>
+                   Love is about how much you love each other every single day.</p>
+
+                <p>True love is not about being inseparable;<br>
+                   it's about being separated and nothing changes.</p>
+
+                <p>Every love story is beautiful, but ours is my favorite.</p>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        function showFriendshipMessage() {
+            var name = document.getElementById('nameInput').value;
+            if (name) {
+                document.getElementById('nameInputContainer').style.display = 'none';
+                var message = document.getElementById('friendshipMessage');
+                message.innerText = 'Happy Friendship Day, ' + name + '!';
+                message.style.display = 'block';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Please enter your name.');
+            }
+        }
+    </script>
+</body>
+</html>
